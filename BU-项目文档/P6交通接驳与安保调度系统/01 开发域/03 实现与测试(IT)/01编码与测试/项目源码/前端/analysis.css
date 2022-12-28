@@ -1,0 +1,274 @@
+.main {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.head {
+	width: 100%;
+	height: 92upx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #5C77D8;
+	position: relative;
+}
+
+.head text {
+	font-size: 32upx;
+	font-weight: normal;
+	color: #FFFFFF;
+	line-height: 44upx;
+}
+
+.img_back {
+	position: absolute;
+	width: 32upx;
+	height: 32upx;
+	left: 34upx;
+}
+.content {
+	position: relative;
+	width: 100%;
+	flex: 1;
+}
+
+#map1 {
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+.tab {
+	width: 100%;
+	height: 80upx;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.content::-webkit-scrollbar {
+	display: none;
+}
+
+.item_p {
+	height: 56upx;
+	padding: 0 32upx;
+	background: #5476DF;
+	border-radius: 28upx;
+	font-size: 28upx;
+	font-weight: 500;
+	color: #FFFFFF;
+	line-height: 56upx;
+	margin-left: 12upx;
+	flex-shrink: 0;
+}
+
+.item_n {
+	height: 56upx;
+	padding: 0 32upx;
+	border-radius: 28upx;
+	font-size: 28upx;
+	font-weight: 500;
+	color: #333333;
+	line-height: 56upx;
+	margin-left: 12upx;
+	flex-shrink: 0;
+}
+
+.ripple_mid {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+}
+.result_btn {
+	position: absolute;
+	top: 40upx;
+	right: 40upx;
+	z-index: 2;
+	font-size: 26upx;
+	line-height: 50upx;
+}
+
+.item {
+	width: 100%;
+	height: 202upx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-bottom: 2upx solid #DBDBDB;
+}
+.item_hover {
+	background: rgba(84, 118, 223, 0.18);
+}
+
+.item_d_p {
+	width: 100%;
+	height: 202upx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-bottom: 2upx solid #DBDBDB;
+	background: rgba(84, 118, 223, 0.18);
+}
+
+.item_top {
+	display: flex;
+	align-items: center;
+}
+#map1>>>.leaflet-label {
+	background-color: rgba(0, 0, 0, 0.6);
+	background-clip: padding-box;
+	color: #ffff00;
+	display: block;
+	/* font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif; */
+	font-weight: bold;
+	padding: 1px 8px;
+	position: absolute;
+	border: 1px solid #ffff00;
+}
+.img_l {
+	width: 68upx;
+	height: 68upx;
+	margin-left: 60upx;
+	margin-right: 12upx;
+}
+
+.item_name {
+	font-size: 32upx;
+	font-family: PingFangSC-Medium, PingFang SC;
+	font-weight: 500;
+	color: #333333;
+	line-height: 44upx;
+}
+
+.item_state_bg {
+	width: 138upx;
+	height: 40upx;
+	border-radius: 20upx;
+	border: 2upx solid #4BC437;
+	display: flex;
+	justify-content: center;
+	margin: 0 22upx;
+}
+
+.item_state {
+	font-size: 24upx;
+	font-weight: 500;
+	color: #4BC437;
+	line-height: 40upx;
+}
+.item_mid {
+	display: flex;
+	align-items: center;
+	margin-left: 140upx;
+}
+
+.item_guiji {
+	display: flex;
+	align-items: center;
+	margin-left: 56upx;
+}
+
+.item_text_n {
+	font-size: 24upx;
+	font-weight: 500;
+	color: #333333;
+	line-height: 34upx;
+}
+
+.item_bottom {
+	display: flex;
+	align-items: center;
+	margin-left: 140upx;
+	margin-top: 8upx;
+}
+
+.item_text_blue {
+	font-size: 24upx;
+	font-weight: 500;
+	color: #5C77D8;
+	line-height: 34upx;
+}
+.ab_1 {
+	width: 138upx;
+	height: 40upx;
+	border-radius: 20upx;
+	border: 2upx solid #4BC437;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 40upx;
+}
+
+.ab_1 text {
+	font-size: 24upx;
+	font-weight: 500;
+	color: #4BC437;
+	line-height: 34upx;
+}
+
+.ab_2 {
+	min-width: 138upx;
+	height: 40upx;
+	border-radius: 20upx;
+	border: 2upx solid #32C5FF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 6upx;
+	padding: 0 10upx;
+	box-sizing: border-box;
+}
+
+.ab_2 text {
+	font-size: 24upx;
+	font-weight: 500;
+	color: #32C5FF;
+	line-height: 34upx;
+}
+
+
+#map1>>>.myPopup {
+	width: 400upx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #fff;
+	border-radius: 8upx;
+}
+#map1>>>.myPopup_text {
+	font-size: 32upx;
+	color: #9f9f9f;
+	margin-top: 20upx;
+}
+#map1>>>.myPopup_b {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 24upx;
+	box-sizing: border-box;
+	padding: 0 20upx;
+	/* border-top: 1px solid #9f9f9f; */
+}
+#map1>>>.myPopup_line {
+	width: 1px;
+	height: 60upx;
+	/* background: #9f9f9f; */
+}
+#map1>>>.myPopup_b_text {
+	font-size: 32upx;
+	line-height: 60upx;
+	color: #9f9f9f;
+	text-align: center;
+	width: 160upx;
+	border-radius: 32upx;
+	border: 1px solid #9f9f9f;
+}
