@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:skin="http://schemas.android.com/android/skin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    skin:enable="true">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10px"
+        android:gravity="right">
+
+        <LinearLayout
+            android:id="@+id/button_infusion_info"
+            android:layout_width="@dimen/activity_main_menu_fragment_parent_width"
+            android:layout_height="@dimen/activity_main_menu_fragment_parent_height">
+
+            <Button
+                android:id="@+id/infusion_info_icon"
+                android:layout_width="@dimen/activity_main_menu_fragment_width"
+                android:layout_height="@dimen/activity_main_menu_fragment_height"
+                android:layout_marginLeft="@dimen/activity_main_menu_fragment_margin_left"
+                android:layout_marginTop="@dimen/activity_main_menu_fragment_margin_top"
+                android:background="@mipmap/icon_infusion"
+                skin:enable="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_infusion_setting"
+            android:layout_width="@dimen/activity_main_menu_fragment_parent_width"
+            android:layout_height="@dimen/activity_main_menu_fragment_parent_height">
+
+            <Button
+                android:id="@+id/infusion_setting_icon"
+                android:layout_width="@dimen/activity_main_menu_fragment_width"
+                android:layout_height="@dimen/activity_main_menu_fragment_height"
+                android:layout_marginLeft="@dimen/activity_main_menu_fragment_margin_left"
+                android:layout_marginTop="@dimen/activity_main_menu_fragment_margin_top"
+                android:background="@mipmap/icon_setting"
+                skin:enable="true"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

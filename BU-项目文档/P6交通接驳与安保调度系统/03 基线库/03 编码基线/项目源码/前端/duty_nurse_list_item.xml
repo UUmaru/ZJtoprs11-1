@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:skin="http://schemas.android.com/android/skin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <View
+        android:id="@+id/view_empty"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/duty_nurse_list_item_view_empty_height" />
+
+    <LinearLayout
+        android:id="@+id/nurse_info_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/duty_nurse_list_item_nurse_info_ll_margin_top"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_tag"
+            android:layout_width="@dimen/duty_nurse_list_item_nurse_info_tv_tag_width"
+            android:layout_height="@dimen/duty_nurse_list_item_nurse_info_tv_tag_height"
+            android:background="@color/list_selected" />
+
+        <TextView
+            android:id="@+id/tv_team_leader_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/duty_nurse_list_item_nurse_info_tv_team_leader_tip_margin_left"
+            android:text="组长："
+            android:textColor="@color/duty_nurse_item_text_color"
+            android:textSize="@dimen/text_size_14"
+            skin:enable="true"/>
+
+        <TextView
+            android:id="@+id/tv_team_leader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/duty_nurse_list_item_nurse_info_tv_team_leader_tip_margin_left"
+            android:textColor="@color/duty_nurse_item_text_color"
+            android:textSize="@dimen/text_size_14"
+            skin:enable="true"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_nurse_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/duty_nurse_list_item_nurse_info_recyclerview_nurse_item_margin_top"></android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

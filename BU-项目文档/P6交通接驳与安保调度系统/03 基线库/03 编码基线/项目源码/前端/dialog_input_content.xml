@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dialog_input_content_width"
+    android:layout_height="@dimen/dialog_input_content_height"
+    android:background="@drawable/login_bg"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:paddingLeft="@dimen/dialog_input_content_padding_left"
+    android:paddingTop="@dimen/dialog_input_content_padding_top"
+    android:paddingRight="@dimen/dialog_input_content_padding_right"
+    android:paddingBottom="@dimen/dialog_input_content_padding_bottom">
+
+    <RelativeLayout
+        android:id="@+id/rl_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="编辑"
+            android:textColor="#FF333333"
+            android:textSize="@dimen/txt_size_12" />
+
+        <ImageView
+            android:id="@+id/btn_reset"
+            android:layout_width="@dimen/dialog_input_content_btn_reset_width"
+            android:layout_height="@dimen/dialog_input_content_btn_reset_height"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dialog_input_content_btn_reset_margin_left"
+            android:layout_marginTop="@dimen/dialog_input_content_btn_reset_margin_top"
+            android:layout_toRightOf="@id/title"
+            android:background="@mipmap/reset_bg"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/ib_out"
+            android:layout_width="@dimen/dialog_input_content_ib_out_width"
+            android:layout_height="@dimen/dialog_input_content_ib_out_height"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/dialog_input_content_ib_out_padding"
+            android:scaleType="fitXY"
+            android:src="@drawable/close" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/input_content"
+        android:layout_width="@dimen/dialog_input_content_input_content_width"
+        android:layout_height="@dimen/dialog_input_content_input_content_height"
+        android:layout_below="@id/rl_head"
+        android:layout_marginTop="@dimen/dialog_input_content_input_content_margin_top"
+        android:background="@drawable/bg_announcement"
+        android:gravity="left|top"
+        android:hint="请输入信息"
+        android:inputType="textMultiLine"
+        android:maxLength="100"
+        android:paddingLeft="@dimen/dialog_input_content_input_content_left"
+        android:paddingTop="@dimen/dialog_input_content_input_content_top"
+        android:paddingRight="@dimen/dialog_input_content_input_content_right"
+        android:paddingBottom="@dimen/dialog_input_content_input_content_bottom"
+        android:textColor="#FF333333"
+        android:textColorHint="#FF999999"
+        android:textSize="@dimen/txt_size_8" />
+
+
+    <TextView
+        android:id="@+id/btn_finish"
+        android:layout_width="@dimen/dialog_input_content_btn_finish_width"
+        android:layout_height="@dimen/dialog_input_content_btn_finish_height"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_finish_btn"
+        android:gravity="center"
+        android:text="完成"
+        android:textColor="#FFFFFFFF"
+        android:textSize="@dimen/txt_size_8" />
+
+
+    <TextView
+        android:id="@+id/btn_cancel"
+        android:layout_width="@dimen/dialog_input_content_btn_cancel_width"
+        android:layout_height="@dimen/dialog_input_content_btn_cancel_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/dialog_input_content_btn_cancel_margin_right"
+        android:layout_toLeftOf="@id/btn_finish"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="#FF666666"
+        android:textSize="@dimen/txt_size_8" />
+
+</RelativeLayout>
