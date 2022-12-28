@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:skin="http://schemas.android.com/android/skin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/layout_dynamic_item_rl_root_layout_marginBottom"
+    android:minHeight="@dimen/layout_dynamic_item_rl_root_minHeight"
+    android:id="@+id/rl_root">
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="@dimen/layout_dynamic_item_title_layout_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_dynamic_item_title_layout_height"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/layout_dynamic_item_tv_count_layout_width"
+            android:textSize="@dimen/text_size_9"
+            android:layout_gravity="top"
+            android:textColor="@color/color_test_1"
+            android:id="@+id/tv_count"
+            android:layout_marginTop="@dimen/layout_dynamic_item_tv_count_layout_marginTop"
+            android:layout_height="wrap_content"
+            skin:enable = "true"/>
+
+        <TextView
+            android:layout_width="@dimen/layout_dynamic_item_tv_theme_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:id="@+id/tv_theme"
+            android:textColor="@color/color_test_2"
+            android:textSize="@dimen/text_size_11"
+            skin:enable = "true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_patientList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/layout_dynamic_item_layout_patientList_layout_marginStart"
+        android:minHeight="@dimen/layout_dynamic_item_layout_patientList_minHeight"
+        android:layout_marginBottom="@dimen/layout_dynamic_item_layout_patientList_layout_marginBottom"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+</RelativeLayout>

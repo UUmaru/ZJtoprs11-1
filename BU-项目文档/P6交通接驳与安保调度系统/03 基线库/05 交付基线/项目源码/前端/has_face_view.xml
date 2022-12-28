@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_face_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:text="@string/face_land_str"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_size_10" />
+
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="190dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:background="@mipmap/scan_box_bg"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="190dp"
+            android:layout_height="140dp"
+            android:layout_marginLeft="25dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/face_code_bg"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/ll_surfaceView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" />
+
+                <com.kyee.iwis.nana.faceland.CircleScanView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="请对准摄像头"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_size_10" />
+</LinearLayout>
