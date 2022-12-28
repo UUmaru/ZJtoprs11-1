@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="640dp"
+    android:layout_height="426dp"
+    android:background="@drawable/login_bg"
+    android:padding="33dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_head">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_add_memo"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/yellow" />
+
+        <ImageButton
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:padding="11dp"
+            android:background="#00000000"
+            android:id="@+id/ib_out"
+            android:scaleType="fitXY"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/close"
+            android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="26dp"
+        android:text="@string/commit"
+        android:textSize="9sp"
+        android:id="@+id/btn_confirm"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_zise"
+        android:layout_gravity="end|bottom" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_head"
+        android:layout_above="@id/btn_confirm">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="@string/time"
+                android:textSize="10sp"
+                android:textColor="#9B9B9B" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_date"
+                    android:textSize="24sp"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:layout_width="30dp"
+                    android:layout_height="17dp"
+                    android:text="@string/fix"
+                    android:layout_marginStart="16dp"
+                    android:textSize="9sp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/dynamic_copy"
+                    android:id="@+id/btn_change_date" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:id="@+id/rl_more_date">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_date_detail"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:layout_width="66dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/userful_time"
+                    android:textColor="#9B9B9B"
+                    android:layout_below="@id/tv_date_detail" />
+
+                <TextView
+                    android:layout_width="66dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day_1"
+                    android:id="@+id/tv_days_num"
+                    android:layout_marginStart="80dp"
+                    android:layout_below="@id/tv_date_detail"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="42dp"
+                    android:layout_height="17dp"
+                    android:text="@string/day_long"
+                    android:textColor="#4A4A4A"
+                    android:textSize="9sp"
+                    android:layout_below="@id/tv_date_detail"
+                    android:layout_marginStart="160dp"
+                    android:background="@drawable/button_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:id="@+id/tv_long" />
+
+                <TextView
+                    android:layout_width="42dp"
+                    android:layout_height="17dp"
+                    android:text="@string/day_add_1"
+                    android:textColor="#4A4A4A"
+                    android:textSize="9sp"
+                    android:layout_below="@id/tv_date_detail"
+                    android:layout_marginStart="208dp"
+                    android:background="@drawable/button_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:id="@+id/tv_add1" />
+
+                <TextView
+                    android:layout_width="42dp"
+                    android:layout_height="17dp"
+                    android:text="@string/day_add_3"
+                    android:textColor="#4A4A4A"
+                    android:textSize="9sp"
+                    android:layout_below="@id/tv_date_detail"
+                    android:layout_marginStart="256dp"
+                    android:background="@drawable/button_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:id="@+id/tv_add3" />
+
+                <TextView
+                    android:layout_width="42dp"
+                    android:layout_height="17dp"
+                    android:text="@string/day_add_5"
+                    android:textColor="#4A4A4A"
+                    android:textSize="9sp"
+                    android:layout_below="@id/tv_date_detail"
+                    android:layout_marginStart="304dp"
+                    android:background="@drawable/button_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:id="@+id/tv_add5" />
+
+                <TextView
+                    android:layout_width="42dp"
+                    android:layout_height="17dp"
+                    android:text="@string/day_add_week"
+                    android:textColor="#4A4A4A"
+                    android:textSize="9sp"
+                    android:layout_below="@id/tv_date_detail"
+                    android:layout_marginStart="352dp"
+                    android:background="@drawable/button_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:id="@+id/tv_add7" />
+
+                <TextView
+                    android:layout_width="42dp"
+                    android:layout_height="17dp"
+                    android:text="@string/day_sub_1"
+                    android:textColor="#4A4A4A"
+                    android:textSize="9sp"
+                    android:layout_below="@id/tv_date_detail"
+                    android:layout_marginStart="400dp"
+                    android:background="@drawable/button_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:id="@+id/tv_sub1" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="@string/memo_message"
+                android:textSize="10sp"
+                android:textColor="#9B9B9B" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/memo_setting"
+                    android:maxWidth="500dp"
+                    android:id="@+id/tv_message"
+                    android:textSize="24sp"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:layout_width="30dp"
+                    android:layout_height="17dp"
+                    android:text="@string/fix"
+                    android:layout_marginStart="16dp"
+                    android:textSize="9sp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/dynamic_copy"
+                    android:id="@+id/btn_change_message" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:id="@+id/rl_more_message">
+
+                <EditText
+                    android:layout_width="146dp"
+                    android:layout_height="46dp"
+                    android:background="@drawable/dialog_edittext"
+                    android:enabled="false"
+                    android:padding="3dp"
+                    android:textColor="#4A4A4A"
+                    android:id="@+id/et_message"
+                    android:labelFor="@+id/et_message"
+                    android:inputType="text"
+                    android:maxLength="40"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="9sp" />
+
+                <LinearLayout
+                    android:layout_width="416dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:minHeight="46dp"
+                    android:id="@+id/ll_last5_message"
+                    android:layout_toEndOf="@id/et_message"
+                    android:layout_marginStart="7dp" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="@string/memo_pat"
+                android:textSize="10sp"
+                android:textColor="#9B9B9B" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/none"
+                    android:id="@+id/tv_patient"
+                    android:textSize="24sp"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:layout_width="30dp"
+                    android:layout_height="17dp"
+                    android:text="@string/fix"
+                    android:layout_marginStart="16dp"
+                    android:textSize="9sp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/dynamic_copy"
+                    android:id="@+id/btn_change_patient" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/ll_more_patient"
+                android:visibility="gone"
+                android:gravity="center_horizontal" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

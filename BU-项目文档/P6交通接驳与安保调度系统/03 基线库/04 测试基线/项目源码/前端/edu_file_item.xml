@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/edu_file_item_ll_item_file_layout_width"
+    android:layout_height="@dimen/edu_file_item_ll_item_file_layout_height"
+    android:id="@+id/ll_item_file">
+
+    <ImageView
+        android:id="@+id/iv_file_type"
+        android:scaleType="fitXY"
+        android:layout_width="@dimen/edu_file_item_iv_file_type_layout_width"
+        android:layout_height="@dimen/edu_file_item_iv_file_type_layout_height" />
+
+    <LinearLayout
+        android:layout_width="@dimen/edu_file_item_ll_layout_width"
+        android:layout_height="@dimen/edu_file_item_ll_layout_height"
+        android:layout_below="@id/iv_file_type"
+        android:paddingLeft="@dimen/edu_file_item_ll_paddingLeft"
+        android:paddingRight="@dimen/edu_file_item_ll_paddingRight"
+        android:paddingTop="@dimen/edu_file_item_ll_paddingTop"
+        android:orientation="vertical"
+        android:background="@drawable/bg_bottom_white">
+
+        <TextView
+            android:id="@+id/tv_file_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_14"
+            android:textColor="#333333"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/tv_file_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edu_file_item_tv_file_remark_layout_marginTop"
+            android:textSize="@dimen/text_size_10"
+            android:textColor="#666666"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
