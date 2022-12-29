@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.vchome.net/software/RJ_CH2-2-4.html -->
+<HTML><HEAD><TITLE>第二章 结构化设计技术</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="MSHTML 6.00.2800.1498" name=GENERATOR><LINK href="style.css" 
+type=text/css rel=stylesheet tppabs="http://gcs.zju.edu.cn/software/style.css">
+<META http-equiv=Page-Enter 
+content=revealTrans(Duration=1.0,Transition=21)></HEAD>
+<BODY background="" tppabs="http://gcs.zju.edu.cn/software/IMAGES/bg[2].gif">
+<P align=justify><FONT lang=ZH-CN face=黑体>2.2.4 <A name=混合型问题>混合型问题</A> 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>在实际中，一些大型问题往往既不是单纯的变换型问题，也不是单纯的事务型问题，而是两种混合在一起的混合型问题。图2.12表示的就是一个混合型问题数据流图及其相应的结 
+构图 。 </FONT></P><FONT lang=ZH-CN face=宋体 size=1>
+<P align=center></P></FONT>
+<P align=center><FONT lang=ZH-CN face=宋体><IMG height=442 
+src="SD2.2.4.files/image024.gif" width=533 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image024.gif"> </FONT></P><FONT 
+lang=ZH-CN face=宋体 size=1>
+<P align=center></P></FONT>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.12 混合型问题数据流图及其结构图 </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>对于这种混合型问题，一般以变换型问题为主，首先找出变换中心，设计出结构图的上层；然后根据数据流图的各部分具体类型分别映射得到它们的结构图。例如，对于图2.12所 
+表示混合型问题，从整体上可以将其看成是一个从A到M的变换型问题，从D到K之间的变换是变换中心；从A到D是传入分支，具有事务型问题的特点；从K到M是传出分支。因此，该混合型问题结构图的上层可以由</FONT><FONT 
+face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN face=宋体>传入D</FONT><FONT 
+face="Tms Rmn,Times New Roman" size=2>”</FONT><FONT lang=ZH-CN 
+face=宋体>模块、</FONT><FONT face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN 
+face=宋体>变换D成K</FONT><FONT face="Tms Rmn,Times New Roman" size=2>”</FONT><FONT 
+lang=ZH-CN face=宋体>模块和</FONT><FONT face="Tms Rmn,Times New Roman">“</FONT><FONT 
+lang=ZH-CN face=宋体>传出K</FONT><FONT face="Tms Rmn,Times New Roman" 
+size=2>”</FONT><FONT lang=ZH-CN face=宋体>模块组成 ，</FONT><FONT 
+face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN face=宋体>传入D</FONT><FONT 
+face="Tms Rmn,Times New Roman" size=2>”</FONT><FONT lang=ZH-CN 
+face=宋体>模块的下层结构图由从传入分支映射得到的事务型问题结构图组成，</FONT><FONT 
+face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN face=宋体>变换D 
+成K</FONT><FONT face="Tms Rmn,Times New Roman" size=2>”</FONT><FONT lang=ZH-CN 
+face=宋体>模块和</FONT><FONT face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN 
+face=宋体>传出K</FONT><FONT face="Tms Rmn,Times New Roman" size=2>”</FONT><FONT 
+lang=ZH-CN face=宋体>模块的下层结构图可以按通常的变换型问题映射方法获得。 </FONT></P>
+<P align=center><A href="http://www.vchome.net/software/SC.htm" 
+tppabs="http://gcs.zju.edu.cn/software/SC.htm"><FONT lang=ZH-CN face=黑体 
+ausong,???><IMG height=42 src="SD2.2.4.files/RJ_CH13.gif" width=89 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH13.gif"> 
+</FONT></A></P></BODY></HTML>

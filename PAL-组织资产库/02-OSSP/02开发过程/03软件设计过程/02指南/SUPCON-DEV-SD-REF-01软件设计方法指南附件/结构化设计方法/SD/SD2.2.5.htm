@@ -1,0 +1,332 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.vchome.net/software/RJ_CH2-2-5.html -->
+<HTML><HEAD><TITLE>第二章 结构化设计技术</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="MSHTML 6.00.2800.1498" name=GENERATOR><LINK href="style.css" 
+type=text/css rel=stylesheet tppabs="http://gcs.zju.edu.cn/software/style.css">
+<META http-equiv=Page-Enter 
+content=revealTrans(Duration=1.0,Transition=21)></HEAD>
+<BODY background="" tppabs="http://gcs.zju.edu.cn/software/IMAGES/bg[2].gif">
+<P align=justify><FONT lang=ZH-CN face=黑体>2.2.5 <A name=分析评价和改进>分析评价和改进</A> 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>利用上述结构化设计方法，根据数据流图映射得到的程序结构图，只是程序结构设计的一个初步结果，我们还必须根据一些软件开发原理和设计准则对其进行分析评价和改进。下面结合结构化设计方法的特点，讨论介绍程序结构图的评价和改进原则。 
+</FONT></P>
+<P><FONT lang=ZH-CN face=宋体>1)分析评价程序结构的聚合性和耦合性，提高程序模块的独立性 </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>聚合性和耦合性是描述结构图中模块内部及之间的联系的两个定性指标，聚合性指的是在模块内部各部分之间的联系，它描述模块功能的相对强度；耦合性指的是模块和模块之间的联系，它描述模块之间的相对独立性。 
+</FONT></P>
+<P><FONT lang=ZH-CN face=宋体>(1) <A name=聚合性>聚合性</A> </FONT></P>
+<P><FONT lang=ZH-CN face=宋体>聚合性的几种具体形式如图2.13所示，作为度量模块相对功能强度的指标，我们总是希 
+望它越高越好，但一般说来只要处于该范围的中段就认为是可以接受的了。 </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体><IMG height=78 
+src="SD2.2.5.files/image026.gif" width=349 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image026.gif"> </FONT></P><FONT 
+lang=ZH-CN face="" size=1 ausong,???>
+<P align=center></P></FONT>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.13 聚合性指标 </FONT></P>
+<P><FONT lang=ZH-CN face=宋体>偶然聚合：完成几个</FONT><FONT lang=ZH-CN face="" size=2 
+ausong,???>关系比较松散的</FONT><FONT lang=ZH-CN 
+face=宋体>任务的模块具有偶然聚合性。例如，为了节省空间，将几个模块中共同的语句抽出来放在一起组成一个模块，该模块就具有偶然聚合性。在这种模块中，由于各成分之间没有实质性的联系，所以很难理解、测试、修改和维护。有时在一种应用场合需要修改，而在另一种应用场合又不允许修改，从而陷入尴尬的困境。事实上，具有偶然聚合性的模块需要修改的可能性常常比具有其它聚合性的模块高得多。 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>逻辑聚合：完成几个在逻辑上相互有关的任务的模块具有逻辑聚合性。例如，专门负责输出出错信息、用户帐单、统计报表等各类数据的模块具有逻辑聚合性。这种模块不易修改，因为各项任务共用部分程序成分，修改其中的一项任务的完成过程将会影响其它任务的完成。 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>时间聚合：完成几个必须在同一时间内进行的任务的模块具有时间聚合性。例如，负责紧急事故处理的模块，必须在同一时间内完成关闭文件、接通警铃、发出出错信息、保护各检测点的数据和进入故障处理程序等项任务，这种模块就具有时间聚合性。 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>信息聚合：所有各成分都使用同一输入数据或产生同一输出数据的模块具有信息聚合性。例如，利用同一数据生成各种不同形式报表的模块具有信息聚合性。 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>顺序聚合：所有各成分都与同一个功能紧密相关、并且必须按顺序执行的模块具有顺序聚合性。例如，由构造系数矩阵、求矩阵逆、解未知数等成分构成的求线性方程解的模块具有顺序聚合性。通常，根据数据流图映射得到的程序结构图中的模块具有这种聚合性。 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>功能聚合：所有各成分属于一个整体、完成一个单一功能的模块具有功能聚合性。例如，如果将上述求解线性方程解的模块中的求矩阵逆的部分单独做成一个模块，则该模块具有功能聚合性。 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>一般认为，偶然的、逻辑的和时间上的聚合是低聚合性的表现；信息的聚合则属于中等聚合性；顺序的和功能的聚合是高聚合性的表现。表2.1列出了各类聚合性与模块各种属性的关系。 
+</FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体>表2.1 聚合性与模块属性的关系 </FONT></P>
+<TABLE cellSpacing=0 width=538 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="18%">
+      <P>&nbsp;</P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>内部联系</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>清晰性</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>可重用性</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>可修改性</FONT></P></TD>
+    <TD vAlign=top width="15%">
+      <P align=center><FONT lang=ZH-CN face=宋体>可理解性</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="18%">
+      <P align=center><FONT lang=ZH-CN face=宋体>偶然聚合性</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>差</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD>
+    <TD vAlign=top width="15%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="18%">
+      <P align=center><FONT lang=ZH-CN face=宋体>逻辑聚合性</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD>
+    <TD vAlign=top width="15%">
+      <P align=center><FONT lang=ZH-CN face=宋体>差</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="18%">
+      <P align=center><FONT lang=ZH-CN face=宋体>时间聚合性</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>差</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>中</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>中</FONT></P></TD>
+    <TD vAlign=top width="15%">
+      <P align=center><FONT lang=ZH-CN face=宋体>中</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="18%">
+      <P align=center><FONT lang=ZH-CN face=宋体>信息聚合性</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>中</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>好</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>差</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>中</FONT></P></TD>
+    <TD vAlign=top width="15%">
+      <P align=center><FONT lang=ZH-CN face=宋体>中</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="18%">
+      <P align=center><FONT lang=ZH-CN face=宋体>顺序聚合性</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>好</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>好</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>中</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>好</FONT></P></TD>
+    <TD vAlign=top width="15%">
+      <P align=center><FONT lang=ZH-CN face=宋体>好</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="18%">
+      <P align=center><FONT lang=ZH-CN face=宋体>功能聚合性</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>好</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>好</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>好</FONT></P></TD>
+    <TD vAlign=top width="17%">
+      <P align=center><FONT lang=ZH-CN face=宋体>好</FONT></P></TD>
+    <TD vAlign=top width="15%">
+      <P align=center><FONT lang=ZH-CN face=宋体>好</FONT></P></TD></TR></TBODY></TABLE>
+<P><FONT lang=ZH-CN face=宋体>(2)<A name=耦合性>耦合性</A> </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>耦合性度量一个程序结构中各个模块之间相互联系程度，它取决于各个模块之间接口的复杂程度，取决于如何进入或访问一个模块，以及哪些数据将通过该接口。它的几种具体形式如图2.14所示。我们总是希望各模块间的耦合尽可能低，这样，程序容易理解，且当某处 
+出现错误并沿着系统蔓延时也不致引起强烈的影响。 </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体><IMG height=78 
+src="SD2.2.5.files/image028.gif" width=349 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image028.gif"> </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.14 耦合性指标 </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>数据耦合：如一个模块访问另一个模块，相互传递的信息以参数形式给出，并且传递的参数完全是数据元素，而不是控制元素，称这种关系为数据耦合。系统中至少必须存在这种耦合，因为只有当某些模块的输出数据作为另一些模块的输入数据时，系统才能完成有价值的功能。 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>标记耦合：假如两个模块都要使用同一个数据结构的一部分，不是采用全程公共数据区共享，而是通过模块接口界面传递数据结构的一部分，这种耦合叫标记耦合。 
+</FONT></P>
+<P><FONT lang=ZH-CN face=宋体>控制耦合：如一模块把控制数据传递到另一模块，对其功能进行控制，即为控制耦合。 </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>外部耦合：模块受程序的外部环境约束时，就出现较高程度的耦合。如输入输出把一个模块耦合到指定的设备、格式以及通信协议上，这就是外部耦合。外部耦合是必要的，但在一个程序结构内应限制在少数模块中。 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>公共耦合：两个以上模块共用一个全局数据区时引起的耦合叫公共耦合。在一些高级语言中的公共数据是公共耦合。模块的公共耦合是因为多个模块共同引用了第三者，耦合程度取决于这个公共环境接口的模块个数。在只有两个模块的情况下，公共耦合的耦合程度介于数据耦合和控制耦合之间。由于模块被公用数据结构束缚在一起，对个别模块的修改和再利用必然带来许多不方便。如果两个模块共享的数据很多，都通过参数传递可能很不方便，这时可以利用这种耦合。 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>内容耦合：当某个模块直接使用保存在另一模块内部的数据或控制信息，或转入另一模块时引起的耦合称为内容耦合。这种关系使得模块间的联系过分紧密，常常给后期的开发和维护工作带来不利的影响。 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>耦合是影响软件复杂程度的一个重要因素，在软件设计过程中，应尽量使用数据耦合，少用控制耦合，限制公共耦合的范围，完全不用内容耦合。 
+</FONT></P>
+<P><FONT lang=ZH-CN face=宋体>表2.2列出了各类耦合性与模块各种属性的关系。 </FONT></P><FONT lang=ZH-CN 
+face=宋体 size=2>
+<P align=justify></P></FONT>
+<P align=center><FONT lang=ZH-CN face=宋体>表2.2 耦合性与模块属性的关系</FONT> </P><FONT 
+lang=ZH-CN face=宋体 size=1>
+<P align=center></P></FONT>
+<TABLE cellSpacing=1 cellPadding=0 width=538 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="20%">
+      <P>&nbsp;</P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>对修改的敏感性</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>可重用性</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>可修改性</FONT></P></TD>
+    <TD vAlign=top width="19%">
+      <P align=center><FONT lang=ZH-CN face=宋体>可理解性</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>内容耦合</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很强</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD>
+    <TD vAlign=top width="19%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>公共耦合</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>强</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>中</FONT></P></TD>
+    <TD vAlign=top width="19%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>外部耦合</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>一般</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>很差</FONT></P></TD>
+    <TD vAlign=top width="19%">
+      <P align=center><FONT lang=ZH-CN face=宋体>中</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>控制耦合</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>一般</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>差</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>差</FONT></P></TD>
+    <TD vAlign=top width="19%">
+      <P align=center><FONT lang=ZH-CN face=宋体>差</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>标记耦合</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>不一定</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>中</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>中</FONT></P></TD>
+    <TD vAlign=top width="19%">
+      <P align=center><FONT lang=ZH-CN face=宋体>中</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>数据耦合</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>不一定</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>好</FONT></P></TD>
+    <TD vAlign=top width="20%">
+      <P align=center><FONT lang=ZH-CN face=宋体>好</FONT></P></TD>
+    <TD vAlign=top width="19%">
+      <P align=center><FONT lang=ZH-CN 
+face=宋体>好</FONT></P></TD></TR></TBODY></TABLE><FONT lang=ZH-CN face=宋体 size=2>
+<P align=justify></P></FONT>
+<P><FONT lang=ZH-CN 
+face=宋体>根据上述聚合性指标和耦合性指标可以对利用结构化设计方法获得的软件初始结构图进行分析评价。为了提高模块独立性，可能要对模块进行分解或合并，以便改善模块的聚合性和耦合性，如图2.15所示。 
+</FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体><IMG height=253 
+src="SD2.2.5.files/image030.gif" width=436 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image030.gif"> </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.15 模块的分解和合并 </FONT></P><FONT 
+lang=ZH-CN face=宋体 size=2>
+<P align=justify></P></FONT>
+<P><FONT lang=ZH-CN face=宋体>2)分析评价结构图的深度、宽度、扇出和扇入，改善程序结构的<A name=形态特性>形态特性</A> 
+</FONT></P>
+<P><FONT lang=ZH-CN face=宋体>用结构图表示的程序结构往往是一个如图2.16所示的树状结构。 </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体><IMG height=206 
+src="SD2.2.5.files/image032.gif" width=451 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image032.gif"> </FONT></P><FONT 
+lang=ZH-CN face="" size=2 ausong,???>
+<P align=center></P></FONT>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.16 结构图的形态特性 </FONT></P><FONT 
+lang=ZH-CN face="" size=2 ausong,???>
+<P align=justify></P></FONT>
+<P><FONT lang=ZH-CN 
+face=宋体>在该具有多个层次的结构树中，模块的层次数称为结构图的深度，它表示出了控制的层数，在一定意义上也能反映出程序物理结构的规模和复杂程度。对于中等规模的程序，其深度约为10左右。如果深度过大，则应考虑结构中的某些模块是否过分简单了。 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>结构图中同一层次模块的最大模块个数称为结构的跨度（宽度），它表示出了控制的总分布。一般来说，宽度越大系统越复杂。对宽度影响最大的因素是模块的扇出。 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>一个模块直接控制的下属模块的个数称为该模块的扇出数。好的系统的平均扇出数通常是3~4，最多是5~9。扇出过大时可以适当增加中间层次的控制模块；扇出过小时可以把下级模块进一步分解成若干个子功能模块，或者合并到上级模块中去。当然这种分解或合并不能影响模块的独立性。 
+</FONT></P>
+<P><FONT lang=ZH-CN face=宋体>多个模块可以有同一个下属模块，该下属模块的上级模块的个数称为扇入数。 </FONT></P>
+<P><FONT lang=ZH-CN face=宋体>通常设计得好的程序结构具有橄榄型结构形态，如图2.17所示。在这种结构中，顶层扇 
+出比较高，中层扇出比较少，底层（共用模块）扇入比较高。 </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体><IMG height=214 
+src="SD2.2.5.files/image034.gif" width=287 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image034.gif"> </FONT></P><FONT 
+lang=ZH-CN face=宋体 size=1>
+<P align=center></P></FONT>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.17 橄榄型结构图 </FONT></P><FONT 
+lang=ZH-CN face=宋体 size=2>
+<P align=justify></P></FONT>
+<P><FONT lang=ZH-CN face=宋体>3)分析模块的作用域和控制域，使作用域在控制域之内 </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>模块的作用域是指受其判定影响的所有模块的集合，模块的控制域是指其本身以及所有直接或间接从属于它的模块的集合。在好的程序结构中，所有受判定影响的模块都从属于作出判定的那个模块，最好局限于作出判定的那个模块本身及其直属下级模块。这样可以明显地降低模块间的耦合性，提高可维护性和可靠性。 
+</FONT></P>
+<P><FONT lang=ZH-CN face=宋体>4)拟定模块的接口，降低接口的复杂性和冗于度，改善一致性 </FONT></P>
+<P><FONT lang=ZH-CN face=宋体>模块接口的复杂性是程序出错的一个主要原因，接口的设计应尽量使信息传递简单，并与模块功能一致。 
+</FONT></P>
+<P><FONT lang=ZH-CN face=宋体>5)分析模块的功能，保证模块的可验证性 </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>可验证性是软件开发要遵循的基本原理之一，因此模块必须设计成功能可预测的。当一个模块可以看作成一个黑盒，不管其内部的处理细节如何，都会产生同样的外部数据时，这种模块是可以预测的。 
+</FONT></P>
+<P><FONT lang=ZH-CN face=宋体>6)恰当地掌握划分模块的大小 </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>究竟划分多大的模块最为合理，很难给出绝对的标准。但一般认为，程序最好能够写在一页纸内，或者说程序行数在50－100的范围内是比较合适的。同一个问题如果把模块划得 
+很小，势必增加模块的数量，增加了模块接口的复杂性，也增加了花在调用和返回上的时间开销，降低了效率。如 果把模块划得过大，将会造成测试和维护工作的困难。 
+</FONT></P>
+<P><FONT lang=ZH-CN face=宋体>按照结构化方法设计和上述方法原则评价改进之后的程序结构将具有如下优点： </FONT></P>
+<OL>
+  <LI><FONT lang=ZH-CN face=宋体>划分了模块，让每个模块完成单一的职能，把原来复杂的问题简化了，使复杂的 多方面需求得到了满足。 
+  </FONT>
+  <LI><FONT lang=ZH-CN face=宋体>可以独立地进行模块的编码与测试，能够灵活方便地对这些工作进行组织安排 ， 
+  一个程序员可以完成若干模块，也可以把各模块分配给多个程序员去完成，并行 开展工作。 </FONT>
+  <LI><FONT lang=ZH-CN face=宋体>模块的划分把每个模块要解决的问题局限于在有限范围之内，处理一个模块问题 
+  时不必考虑模块以外的问题，减少了出错的机会。即使出现了错误，在局部范围 内也容易解决。 </FONT>
+  <LI><FONT lang=ZH-CN face=宋体>模块中一部分程序的修改，完全不影响模块以外的程序。极大地减少了产生修改 
+  副作用的可能。程序员个人的工作差错，所影响的范围一般只限在模块以内，不 会影响到全局。 </FONT>
+  <LI><FONT lang=ZH-CN face=宋体>可对关键模块采取特殊措施加以优化处理，以保证整个系统达到特定的要求。 </FONT>
+  <LI><FONT lang=ZH-CN face=宋体>使程序的复用成为可能，一个模块可多次使用，提高了软件产品的利用率。 </FONT>
+  <LI><FONT lang=ZH-CN face=宋体>已开发的程序易于理解，每个模块的职能明确，也就不难理解整个软件系统的结 构和性能。 </FONT>
+  <LI><FONT lang=ZH-CN face=宋体>有利于估计工作量和开发成本。 </FONT></LI></OL>
+<P align=center><A href="http://www.vchome.net/software/SC.htm" 
+tppabs="http://gcs.zju.edu.cn/software/SC.htm"><FONT lang=ZH-CN face=黑体><IMG 
+height=42 src="SD2.2.5.files/RJ_CH13.gif" width=89 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH13.gif"> 
+</FONT></A></P></BODY></HTML>

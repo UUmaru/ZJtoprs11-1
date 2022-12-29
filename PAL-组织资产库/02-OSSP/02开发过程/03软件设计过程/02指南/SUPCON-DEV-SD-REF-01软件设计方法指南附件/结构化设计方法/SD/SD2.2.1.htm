@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.vchome.net/software/RJ_CH2-2-1.html -->
+<HTML><HEAD><TITLE>第二章 结构化设计技术</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="MSHTML 6.00.2800.1498" name=GENERATOR><LINK href="style.css" 
+type=text/css rel=stylesheet tppabs="http://gcs.zju.edu.cn/software/style.css">
+<META http-equiv=Page-Enter 
+content=revealTrans(Duration=1.0,Transition=21)></HEAD>
+<BODY background=SD2.2.1.files/bg[2].gif 
+tppabs="http://gcs.zju.edu.cn/software/images/bg[2].gif">
+<P align=justify><FONT lang=ZH-CN face=黑体>2.2.1 <A name=结构图>结构图</A> </FONT></P>
+<P><FONT lang=ZH-CN face=宋体>结构图(Structured Charts，简称SC)是准确表达程序结构的图形表示方法，它能清楚地反 
+映出程序中各模块间的层次关系和联系。与数据流图反映数据流的情况不同，结构图反映的是程序中控制流的情况。图2.2为大学教务管理系统的结构图。 
+</FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体><IMG height=309 
+src="SD2.2.1.files/image004.gif" width=443 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image004.gif"> </FONT></P><FONT 
+lang=ZH-CN face=宋体 size=1>
+<P align=center></P></FONT>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.2 大学教务管理系统结构图 </FONT></P>
+<P><FONT lang=ZH-CN face=宋体>结构图中的主要成分有 </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>(1)模块：以矩形框表示，框中标有模块的名字。对于已定义（或者已开发）的模块，则可以用双纵边矩形框表示，如图2.3所示。 </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体><IMG height=29 
+src="SD2.2.1.files/image006.gif" width=182 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image006.gif"> </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.3 模块的表示 </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>(2)模块间的调用关系：两个模块，一上一下，以箭头相联，上面的模块是调用模块，箭头指向的模块是被调用模块，如图2.4中，模块A调用模块B。在一般情况下，箭头表示的联 
+线可以用直线代替。 </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体><IMG height=110 
+src="SD2.2.1.files/image008.gif" width=93 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image008.gif"> </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.4 模块的调用关系及信息传递关系的表示 </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>(3)模块间的通讯：以表示调用关系的长箭头旁边的短箭头表示，短箭头的方向和名字分别表示调用模块和被调用模块之间信息的传递方向和内容。如图2.4中，首先模块A将信息C 
+传给模块B，经模块B加工处理后的信息D再传回给A。 </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>(4)辅助控制符号：当模块A有条件的调用模块B时，在箭头的起点标以菱形。模块A反复地调用模块D时，另加一环状箭头。如图2.5所示。 
+</FONT></P>
+<P><FONT lang=ZH-CN face=宋体>在结构图中条件调用所依赖的条件和循环调用的循环控制条件通常都无需注明。 </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体><IMG height=99 
+src="SD2.2.1.files/image010.gif" width=231 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image010.gif"> </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.5 条件调用和循环调用的表示</FONT></P>
+<P><FONT lang=ZH-CN face=宋体>一般说来，结构图中可能出现以下四种类型的模块：</FONT></P><FONT lang=ZH-CN 
+face=宋体 size=2>
+<P align=justify></P></FONT>
+<P align=center><FONT lang=ZH-CN face=宋体><IMG height=100 
+src="SD2.2.1.files/image012.gif" width=258 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image012.gif"> </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.6 四种模块类型 </FONT></P>
+<OL>
+  <LI><FONT lang=ZH-CN face=宋体>传入模块：图2.6(a)，从下属模块取得数据，经过某些处理，再将其传送给上级模块</FONT> 
+  <FONT lang=ZH-CN face=宋体 size=2>
+  <P align=justify></FONT></P>
+  <LI><FONT lang=ZH-CN face=宋体>传出模块：图2.6(b)，从上级模块取得数据，进行某些处理，传送给下属模块</FONT> 
+  <FONT lang=ZH-CN face=宋体 size=2>
+  <P align=justify></FONT></P>
+  <LI><FONT lang=ZH-CN face=宋体>变换模块：图2.6(c)，从上级模块取来数据，进行特定处理后，送回原上级模块</FONT> 
+  <FONT lang=ZH-CN face=宋体 size=2>
+  <P align=justify></FONT></P>
+  <LI><FONT lang=ZH-CN face=宋体>协调模块：图2.6(d)，对其下属模块进行控制和管理的模块</FONT></LI></OL>
+<P><A name=值得注意的是><FONT lang=ZH-CN face=宋体>值得注意的是</FONT></A><FONT lang=ZH-CN 
+face=宋体>，结构图着重反映的是模块间的隶属关系，即模块间的调用关系和层次关系。它和程序流程图（常称为程序框图）有着本质的差别。程序流程图着重表达的是程序执行的顺序以及执行顺序所依赖的条件。结构图则着眼于软件系统的总体结构，它并不涉及模块内部的细节，只考虑模块的作用，以及它和上、下级模块的关系。而程序流程图则用来表达执行程序的具体算法。</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>没有学过软件开发技术的人，一般习惯于使用流程图编写程序，往往在模块还未作划分、程序结构的层次尚未确定以前，便急于用流程图表达他们对程序的构想。这就象造一栋大楼，在尚未决定建筑面积和楼屋有多少时，就已经开始砌砖了。这显然是不合适的。</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>在结构化分析和设计技术中，通常存在着两种典型的问题类型，变换型问题和事务型问题，它们的数据流图和结构图都有明显的特征。下面分别讨论它们的数据流图形态及其映射成结构图的过程。</FONT></P>
+<P align=center><A href="http://www.vchome.net/software/SC.htm" 
+tppabs="http://gcs.zju.edu.cn/software/SC.htm"><FONT lang=ZH-CN face=黑体><IMG 
+height=42 src="SD2.2.1.files/RJ_CH13.gif" width=89 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH13.gif"> 
+</FONT></A></P></BODY></HTML>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.vchome.net/software/RJ_CH2-2-2.html -->
+<HTML><HEAD><TITLE>第二章 结构化设计技术</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="MSHTML 6.00.2800.1498" name=GENERATOR><LINK href="style.css" 
+type=text/css rel=stylesheet tppabs="http://gcs.zju.edu.cn/software/style.css">
+<META http-equiv=Page-Enter 
+content=revealTrans(Duration=1.0,Transition=21)></HEAD>
+<BODY background="" tppabs="http://gcs.zju.edu.cn/software/IMAGES/bg[2].gif">
+<P align=justify><FONT lang=ZH-CN face=黑体>2.2.2 <A name=变换型问题>变换型问题</A> 
+</FONT></P>
+<P><FONT lang=ZH-CN face=宋体>在数据处理问题中，我们通常会遇到这样一类问题，即从（程序）</FONT><FONT 
+face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN face=宋体>外部</FONT><FONT 
+face="Tms Rmn,Times New Roman">”</FONT><FONT lang=ZH-CN 
+face=宋体>取得数据（例如从键盘、磁盘文件等），对取得的数据进行某种变换，然后再将变换得到的数据传回给</FONT><FONT 
+face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN face=宋体>外部</FONT><FONT 
+face="Tms Rmn,Times New Roman">”</FONT><FONT lang=ZH-CN 
+face=宋体>。其中取得数据这一过程称为传入信息（数据）流程、变换数据的过程称为变换信息（数据）流程，传回数据过程称为传出信息（数据）流程，如图2.7所示。 
+</FONT></P><FONT lang=ZH-CN face=宋体 size=2>
+<P align=justify></P></FONT>
+<P align=center><FONT lang=ZH-CN face=宋体><IMG height=303 
+src="SD2.2.2.files/image014.gif" width=494 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image014.gif"> </FONT></P><FONT 
+lang=ZH-CN face="" size=2 ausong,???>
+<P align=center></P></FONT>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.7 变换型问题 </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>当数据流图或其中某一段数据流表现出上述特征时，该数据流图或该段数据流图表示的就是一个变换型问题。完成数据变换的处理单元叫变换中心。变换型问题数据流图基本形态及其对应的基本结构图分别如图2.8(a)和(b)所示。 
+</FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体><IMG height=99 
+src="SD2.2.2.files/image016.gif" width=465 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image016.gif"> </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体>图 2.8 基本变换型问题数据流图及其结构图 </FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>根据图2.8表示的基本映射关系所得到的图2.7所示变换型问题的结构图如图2.9所示。</FONT><FONT 
+face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN face=宋体> 
+变换控制</FONT><FONT face="Tms Rmn,Times New Roman">”</FONT><FONT lang=ZH-CN 
+face=宋体>模块首先获得控制，然后控制沿着结构到达底层的</FONT><FONT 
+face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN face=宋体>传入A</FONT><FONT 
+face="Tms Rmn,Times New Roman" size=2>”</FONT><FONT lang=ZH-CN face=宋体>模块，物理输入数 
+据A由</FONT><FONT face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN 
+face=宋体>传入A</FONT><FONT face="Tms Rmn,Times New Roman" size=2>”</FONT><FONT 
+lang=ZH-CN face=宋体>模块读入后，从底层逐步向上传送。在传送过程中，数据经</FONT><FONT 
+face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN 
+face=宋体>变换A成B</FONT><FONT face="Tms Rmn,Times New Roman" size=2>”</FONT><FONT 
+lang=ZH-CN face=宋体> 、</FONT><FONT face="Tms Rmn,Times New Roman">“</FONT><FONT 
+lang=ZH-CN face=宋体>变换B成C</FONT><FONT face="Tms Rmn,Times New Roman" 
+size=2>”</FONT><FONT lang=ZH-CN face=宋体>等模块的预处理，逐渐变换成纯粹的逻辑输入C、E。接着在</FONT><FONT 
+face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN face=宋体>变换控制</FONT><FONT 
+face="Tms Rmn,Times New Roman">”</FONT><FONT lang=ZH-CN face=宋体> 
+模块的控制下，将逻辑输入经变换中心模块</FONT><FONT face="Tms Rmn,Times New Roman">“</FONT><FONT 
+lang=ZH-CN face=宋体>变换C和E成W</FONT><FONT face="Tms Rmn,Times New Roman" 
+size=2>”</FONT><FONT lang=ZH-CN 
+face=宋体>处理后，变换成逻辑输出W，再从顶层逐步向下传送。在这一传送过程中，数据经</FONT><FONT 
+face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN 
+face=宋体>变换W成X</FONT><FONT face="Tms Rmn,Times New Roman" size=2>”</FONT><FONT 
+lang=ZH-CN face=宋体 size=2>、</FONT><FONT 
+face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN 
+face=宋体>变换X成Y</FONT><FONT face="Tms Rmn,Times New Roman" size=2>”</FONT><FONT 
+lang=ZH-CN face=宋体>等模块的后处理，逐渐变换成适当的输出形式，最后由</FONT><FONT 
+face="Tms Rmn,Times New Roman">“</FONT><FONT lang=ZH-CN face=宋体>传出Y</FONT><FONT 
+face="Tms Rmn,Times New Roman" size=2>”</FONT><FONT lang=ZH-CN face=宋体>模块完成物理输出。 
+</FONT></P>
+<P align=center><FONT lang=ZH-CN face="" ausong,???><IMG height=203 
+src="SD2.2.2.files/image018.gif" width=515 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image018.gif"> </FONT></P><FONT 
+lang=ZH-CN face="" size=2 ausong,???>
+<P align=justify></P></FONT>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.9 变换型问题结构图 </FONT></P>
+<P align=center><A href="http://www.vchome.net/software/SC.htm" 
+tppabs="http://gcs.zju.edu.cn/software/SC.htm"><FONT lang=ZH-CN face=黑体><IMG 
+height=42 src="SD2.2.2.files/RJ_CH13.gif" width=89 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH13.gif"> 
+</FONT></A></P></BODY></HTML>

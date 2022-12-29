@@ -1,0 +1,32 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.vchome.net/software/RJ_CH2-2-3.html -->
+<HTML><HEAD><TITLE>第二章 结构化设计技术</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="MSHTML 6.00.2800.1498" name=GENERATOR><LINK href="style.css" 
+type=text/css rel=stylesheet tppabs="http://gcs.zju.edu.cn/software/style.css">
+<META http-equiv=Page-Enter 
+content=revealTrans(Duration=1.0,Transition=21)></HEAD>
+<BODY background="" tppabs="http://gcs.zju.edu.cn/software/IMAGES/bg[2].gif">
+<P align=justify><FONT lang=ZH-CN face=黑体>2.2.3 <A name=事务型问题>事务型问题</A> 
+</FONT></P>
+<P><FONT lang=ZH-CN 
+face=宋体>在实际中，我们还常常会遇到另一类问题，即通常在接受某一项事务后，根据事务的特点和性质，选择分派给一个适当的处理单元，然后给出结果，如图2.10所示。 
+</FONT></P>
+<P align=center><FONT lang=ZH-CN face="" ausong,???><IMG height=305 
+src="SD2.2.3.files/image020.gif" width=391 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image020.gif"> </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.10 事务型问题 </FONT></P><FONT lang=ZH-CN 
+face="" size=2 ausong,???>
+<P align=center></P></FONT>
+<P><FONT lang=ZH-CN 
+face=宋体>这类问题就是事务型问题。它的特点是，数据沿着接收分支把外部信息（数据）转换成一个事务项，然后计算该事务项的值，并根据它的值从多条数据流中选择其中的某一条数据流。发出多条数据流的处理单元叫事务中心。这类问题的典型结构图如图2.11所示。事务控 
+制模块按所取得事务的类型，选择调用某一个处理事务模块。 </FONT></P>
+<P align=center><FONT lang=ZH-CN face="" ausong,???><IMG height=153 
+src="SD2.2.3.files/image022.gif" width=436 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH2/image022.gif"> </FONT></P>
+<P align=center><FONT lang=ZH-CN face=宋体>图2.11 事务型问题结构图 </FONT></P>
+<P align=center><A href="http://www.vchome.net/software/SC.htm" 
+tppabs="http://gcs.zju.edu.cn/software/SC.htm"><FONT lang=ZH-CN face=黑体><IMG 
+height=42 src="SD2.2.3.files/RJ_CH13.gif" width=89 border=0 
+tppabs="http://gcs.zju.edu.cn/software/RJ_CH13.gif"> 
+</FONT></A></P></BODY></HTML>
