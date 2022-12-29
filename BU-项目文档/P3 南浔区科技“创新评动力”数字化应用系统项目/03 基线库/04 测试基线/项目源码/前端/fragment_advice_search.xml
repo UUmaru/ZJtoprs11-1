@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:skin="http://schemas.android.com/android/skin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/advice_search_layout_marginTop1"
+    android:background="@color/color_fragment_advice_search_bg"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/advice_search_layout_left1"
+    android:paddingTop="@dimen/advice_search_layout_top1"
+    android:paddingRight="@dimen/advice_search_layout_right1"
+    android:paddingBottom="@dimen/advice_search_layout_bottom1"
+    skin:enable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/advice_search_layout_height2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="时间段"
+            android:textColor="@color/fragment_txt_color_primary"
+            android:textSize="@dimen/text_size_12"
+            skin:enable="true" />
+
+        <LinearLayout
+            android:id="@+id/choose_time_ll"
+            android:layout_width="@dimen/advice_search_choose_time_ll_width"
+            android:layout_height="@dimen/advice_search_choose_time_ll_height"
+            android:layout_marginLeft="@dimen/advice_search_choose_time_ll_left"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_edit"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/advice_search_bg_statistics_time_text_right"
+                skin:enable="true">
+
+                <TextView
+                    android:id="@+id/choose_start_time_tv"
+                    android:layout_width="@dimen/advice_search_choose_start_time_tv_width"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="开始日期"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/fragment_txt_color_primary"
+                    android:textSize="@dimen/text_size_12"
+                    skin:enable="true" />
+
+                <TextView
+                    android:layout_width="@dimen/advice_search_layout_width3"
+                    android:layout_height="@dimen/advice_search_layout_height3"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/advice_search_layout_left3"
+                    android:background="@mipmap/calendar_icon"
+                    skin:enable="true" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/advice_search_layout_marginLeft4"
+                android:layout_marginRight="@dimen/advice_search_layout_marginRight4"
+                android:gravity="center_vertical"
+                android:text="--"
+                android:textColor="@color/fragment_txt_color_primary"
+                skin:enable="true" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_edit"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/advice_search_layout_paddingRight"
+                skin:enable="true">
+
+                <TextView
+                    android:id="@+id/choose_end_time_tv"
+                    android:layout_width="@dimen/advice_search_choose_end_time_tv_width"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="结束日期"
+                    android:textColor="@color/fragment_txt_color_primary"
+                    android:textSize="@dimen/text_size_12"
+                    skin:enable="true" />
+
+                <TextView
+                    android:layout_width="@dimen/advice_search_layout_width5"
+                    android:layout_height="@dimen/advice_search_layout_height5"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/advice_search_layout_left5"
+                    android:background="@mipmap/calendar_icon"
+                    skin:enable="true" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/advice_search_layout_marginLeft6"
+            android:gravity="center_vertical"
+            android:text="床号"
+            android:textColor="@color/fragment_txt_color_primary"
+            android:textSize="@dimen/text_size_12"
+            skin:enable="true" />
+
+        <TextView
+            android:id="@+id/tv_search_bed_no"
+            android:layout_width="@dimen/advice_search_tv_search_bed_no_width"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/advice_search_tv_search_bed_no_left"
+            android:background="@drawable/bg_edit"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/advice_search_tv_search_bed_no_padding_left"
+            android:text="全部"
+            android:textColor="@color/fragment_txt_color_primary"
+            android:textSize="@dimen/text_size_12"
+            skin:enable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/advice_search_layout_marginLeft7"
+            android:gravity="center_vertical"
+            android:text="患者姓名"
+            android:textColor="@color/fragment_txt_color_primary"
+            android:textSize="@dimen/text_size_12"
+            skin:enable="true" />
+
+        <EditText
+            android:id="@+id/et_search_pat_name"
+            android:layout_width="@dimen/advice_search_et_search_pat_name_width"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/advice_search_et_search_pat_name_left"
+            android:background="@drawable/bg_edit"
+            android:gravity="center_vertical"
+            android:hint="请输入患者姓名"
+            android:maxLength="20"
+            android:paddingLeft="@dimen/advice_search_et_search_pat_name_padding_left"
+            android:textColor="@color/fragment_txt_color_primary"
+            android:textColorHint="@color/fragment_txt_color_primary"
+            android:textSize="@dimen/text_size_12"
+            skin:enable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/advice_search_layout_marginLeft"
+            android:gravity="center_vertical"
+            android:text="医嘱号"
+            android:textColor="@color/fragment_txt_color_primary"
+            android:textSize="@dimen/text_size_12"
+            skin:enable="true" />
+
+        <EditText
+            android:id="@+id/et_search_advice_id"
+            android:layout_width="@dimen/advice_search_et_search_advice_id_width"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/advice_search_et_search_advice_id_left"
+            android:background="@drawable/bg_edit"
+            android:gravity="center_vertical"
+            android:hint="请输入医嘱号"
+            android:maxLength="20"
+            android:paddingLeft="@dimen/advice_search_et_search_advice_id_padding_left"
+            android:textColor="@color/fragment_txt_color_primary"
+            android:textColorHint="@color/fragment_txt_color_primary"
+            android:textSize="@dimen/text_size_12"
+            skin:enable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_second_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/advice_search_ll_second_line_height"
+        android:layout_marginTop="@dimen/advice_search_ll_second_line_top">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="医嘱原文"
+            android:textColor="@color/fragment_txt_color_primary"
+            android:textSize="@dimen/text_size_12"
+            skin:enable="true" />
+
+        <EditText
+            android:id="@+id/et_search_original_order"
+            android:layout_width="@dimen/advice_search_et_search_original_order_width"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/advice_search_et_search_original_order_left"
+            android:background="@drawable/bg_edit"
+            android:gravity="center_vertical"
+            android:hint="请输入医嘱原文"
+            android:maxLength="20"
+            android:paddingLeft="@dimen/advice_search_et_search_original_order_padding_left"
+            android:textColor="@color/fragment_txt_color_primary"
+            android:textColorHint="@color/fragment_txt_color_primary"
+            android:textSize="@dimen/text_size_12"
+            skin:enable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/advice_search_layout_marginLeft8"
+            android:gravity="center_vertical"
+            android:text="开嘱医生"
+            android:textColor="@color/fragment_txt_color_primary"
+            android:textColorHint="@color/fragment_txt_color_primary"
+            android:textSize="@dimen/text_size_12"
+            skin:enable="true" />
+
+        <EditText
+            android:id="@+id/et_search_doc_name"
+            android:layout_width="@dimen/advice_search_et_search_doc_name_width"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/advice_search_et_search_doc_name_left"
+            android:background="@drawable/bg_edit"
+            android:gravity="center_vertical"
+            android:hint="请输入开嘱医生"
+            android:maxLength="20"
+            android:paddingLeft="@dimen/advice_search_et_search_doc_name_padding_left"
+            android:textColor="@color/fragment_txt_color_primary"
+            android:textColorHint="@color/fragment_txt_color_primary"
+            android:textSize="@dimen/text_size_12"
+            skin:enable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/advice_search_layout_marginLeft9"
+            android:gravity="center_vertical"
+            android:text="处理状态"
+            android:textColor="@color/fragment_txt_color_primary"
+            android:textSize="@dimen/text_size_12"
+            skin:enable="true" />
+
+        <com.kyee.iwis.nana.widget.spinner.AdviceSpinner
+            android:id="@+id/sp_deal_status"
+            android:layout_width="@dimen/advice_search_sp_deal_status_width"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/advice_search_sp_deal_status_left"
+            skin:enable="true" />
+
+        <LinearLayout
+            android:id="@+id/ll_search_advice"
+            android:layout_width="@dimen/advice_search_ll_search_advice_width"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/advice_search_ll_search_advice_left"
+            android:background="@drawable/bg_reserved_yellow"
+            android:orientation="horizontal"
+            skin:enable="true">
+
+            <ImageView
+                android:layout_width="@dimen/advice_search_ic_search_width"
+                android:layout_height="@dimen/advice_search_ic_search_height"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/advice_search_ic_search_left"
+                android:src="@mipmap/ic_search" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/advice_search_layout_marginLeft10"
+                android:gravity="center"
+                android:text="搜索"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_12"
+                skin:enable="true" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_status_chart"
+        android:layout_width="@dimen/advice_search_rl_status_chart_width"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_second_line"
+        android:layout_marginTop="@dimen/advice_search_rl_status_chart_top"
+        android:background="@color/color_fragment_advice_search_bg_rl_status_chart"
+        skin:enable="true">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pie_chart"
+            android:layout_width="@dimen/advice_search_pie_chart_width"
+            android:layout_height="@dimen/advice_search_pie_chart_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/advice_search_pie_chart_left"
+            android:layout_marginTop="@dimen/advice_search_pie_chart_top"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_pie_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/pie_chart"
+            android:layout_marginLeft="@dimen/advice_search_ll_pie_item_left"
+            android:layout_marginTop="@dimen/advice_search_ll_pie_item_top"
+            android:orientation="vertical" />
+
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/ll_advice_title"
+        layout="@layout/item_advice"
+        android:layout_width="@dimen/advice_search_ll_advice_title_width"
+        android:layout_height="@dimen/advice_search_ll_advice_title_height"
+        android:layout_below="@id/ll_second_line"
+        android:layout_marginLeft="@dimen/advice_search_ll_advice_title_left"
+        android:layout_marginTop="@dimen/advice_search_ll_advice_title_top" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_advice_detail"
+        android:layout_width="@dimen/advice_search_layout_width11"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_second_line"
+        android:layout_marginLeft="@dimen/advice_search_layout_left11"
+        android:layout_marginTop="@dimen/advice_search_layout_top11" />
+
+    <TextView
+        android:id="@+id/tv_init_tip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_second_line"
+        android:layout_marginTop="@dimen/advice_search_tv_init_tip_top"
+        android:background="@color/color_fragment_advice_search_bg_rl_status_chart"
+        android:gravity="center"
+        android:text="请点击搜索按钮进行查询"
+        android:textColor="@color/table_empty_view_txt_color"
+        android:textSize="@dimen/text_size_12"
+        skin:enable="true" />
+
+</RelativeLayout>
